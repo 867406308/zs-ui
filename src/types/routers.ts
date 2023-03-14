@@ -1,0 +1,3 @@
+declare interface RoutersType {
+  menuList: [];
+}

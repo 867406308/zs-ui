@@ -1,0 +1,18 @@
+# 配置 eslint 忽略文件
+node_modules
+*.md
+*.woff
+*.ttf
+.vscode
+.idea
+static
+dist
+/public
+/docs
+.husky
+.local
+/bin
+.eslintrc.js
+prettier.config.js
+/src/mock/*
+.git

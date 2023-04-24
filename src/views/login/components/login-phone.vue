@@ -50,7 +50,7 @@
   </el-form>
 </template>
 <script>
-import { defineComponent, toRefs, reactive } from 'vue';
+import { defineComponent, toRefs, reactive } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -59,25 +59,25 @@ export default defineComponent({
         username: '',
         password: '',
       },
-    });
+    })
     // 表单提交
-    const dataFormSubmitHandle = () => {};
+    const dataFormSubmitHandle = () => {}
     return {
       ...toRefs(state),
       dataFormSubmitHandle,
-    };
+    }
   },
-});
+})
 </script>
 <style lang="scss" scoped>
-.el-form {
+.zs-form {
   padding-top: 20px;
   .tools {
     width: 100%;
     display: flex;
     justify-content: space-between;
   }
-  .el-icon {
+  .zs-icon {
     height: 1.5em;
     width: 1.5em;
     svg {

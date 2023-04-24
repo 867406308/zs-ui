@@ -6,8 +6,8 @@
       </div> -->
       <div class="login_main">
         <el-row>
-          <el-col class="main_left" :span="14"></el-col>
-          <el-col class="main_right" :span="10">
+          <el-col class="main_left" :span="13"></el-col>
+          <el-col class="main_right" :span="11">
             <div class="right_title">智慧校园报修服务平台</div>
             <el-tabs v-model="activeName" class="demo-tabs">
               <el-tab-pane label="账号密码登录" name="first">
@@ -40,9 +40,9 @@
 </template>
 
 <script>
-import { reactive, defineComponent, toRefs } from 'vue';
-import loginUsername from './components/login-username.vue';
-import loginPhone from './components/login-phone.vue';
+import { reactive, defineComponent, toRefs } from 'vue'
+import loginUsername from './components/login-username.vue'
+import loginPhone from './components/login-phone.vue'
 export default defineComponent({
   components: {
     loginUsername,
@@ -51,13 +51,13 @@ export default defineComponent({
   setup() {
     const state = reactive({
       activeName: 'first',
-    });
+    })
 
     return {
       ...toRefs(state),
-    };
+    }
   },
-});
+})
 </script>
 <style lang="scss" scoped>
 .login-container {
@@ -85,19 +85,19 @@ export default defineComponent({
     }
 
     .login_main {
-      width: 1200px;
-      height: 620px;
+      width: 900px;
+      height: 520px;
       background-color: #fff;
-      border-radius: 26px;
+      border-radius: 15px;
 
       .main_left {
-        height: 620px;
+        height: 520px;
         background: url('@/assets/bg6.png') no-repeat;
         background-repeat: round;
       }
 
       .main_right {
-        padding: 50px 40px;
+        padding: 40px 30px;
         // background-color: #e9eef2;
 
         .right_title {
@@ -105,7 +105,7 @@ export default defineComponent({
           font-size: 30px;
           font-weight: 700;
           text-align: center;
-          line-height: 60px;
+          line-height: 30px;
           margin-bottom: 25px;
         }
 

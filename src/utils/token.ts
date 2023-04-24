@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie';
 
-const TokenKey = 'xinxin_admin_token';
+const TokenKey = 'zs_admin_token';
 /**
  * 获取token
  */

@@ -55,29 +55,29 @@
   </el-form>
 </template>
 <script>
-import { isPassword } from '@/utils/validator';
-import { useUserStore } from '@/store/modules/sys/user';
+import { isPassword } from '@/utils/validator'
+import { useUserStore } from '@/store/modules/sys/user'
 export default defineComponent({
   setup() {
     const validateUsername = (rule, value, callback) => {
       if ('' === value) {
-        callback(new Error('账号不能为空'));
+        callback(new Error('账号不能为空'))
       } else {
-        callback();
+        callback()
       }
-    };
+    }
     const validatePassword = (rule, value, callback) => {
       if (!isPassword(value)) {
-        callback(new Error('密码不能少于6位'));
+        callback(new Error('密码不能少于6位'))
       } else {
-        callback();
+        callback()
       }
-    };
+    }
     const state = reactive({
       loading: false,
       formRef: null,
       form: {
-        username: '1',
+        username: 'admin',
         password: '123456',
       },
       rules: {
@@ -96,41 +96,42 @@ export default defineComponent({
           },
         ],
       },
-    });
+    })
 
-    const router = useRouter();
-    const { login } = useUserStore();
+    const router = useRouter()
+    const { login } = useUserStore()
     // 表单提交
-    const handleLogin = () => {
-      state['formRef'].validate((valid) => {
+    const handleLogin = async () => {
+      state['formRef'].validate(async (valid) => {
         if (valid)
           try {
-            state.loading = true;
-            login(state.form);
-            console.log('准备登录');
-            router.push('/');
+            state.loading = true
+            await login(state.form)
+            router.push('/index')
           } finally {
-            state.loading = false;
+            state.loading = false
           }
-      });
-    };
+      })
+    }
     return {
       ...toRefs(state),
       handleLogin,
-    };
+    }
   },
-});
+})
 </script>
 <style lang="scss" scoped>
-.el-form {
+.zs-form {
   padding-top: 20px;
-  .tools {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  .zs-form-item__content {
+    .tools {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
-  .el-icon {
+  .zs-icon {
     height: 1.5em;
     width: 1.5em;
     svg {
